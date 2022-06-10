@@ -32,6 +32,11 @@ public:
     // For Input and Output Pins
     uint8_t getState();
 
+    // Get_Set BlinkTime
+    uint16_t Get_BlinkTime(void);
+    void Set_BlinkTime(uint16_t delay);
+
+
 private:
 
     // The Arduino pin number. This is 0 through 13,
@@ -41,6 +46,9 @@ private:
 
     // Flag to indicate if this is an output pin.
     bool _isOutput;
+
+    // Blink time
+    uint16_t blinkTime;
 };
 
 

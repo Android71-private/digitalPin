@@ -5,7 +5,8 @@
 digitalPin::digitalPin(uint8_t pinNumber,
                        uint8_t Mode)
     : _pinNumber(pinNumber),
-      _isOutput(false)
+      _isOutput(false),
+      blinkTime(300)
 {
     // Update the output pin flag.
     if (Mode == OUTPUT)
@@ -17,6 +18,18 @@ digitalPin::digitalPin(uint8_t pinNumber,
 
 
 // For Output digitalPins:
+
+// Get_Set BlinkTime
+
+uint16_t digitalPin::Get_BlinkTime()
+{
+    return blinkTime;
+}
+
+void digitalPin::Set_BlinkTime(uint16_t delay)
+{
+    blinkTime = delay;
+}
 
 // Set the pin state to high or low.
 void digitalPin::setState(uint8_t pinState)
